@@ -15,11 +15,13 @@ sudo docker run -it orchard
 
 cd SCALE-MAMBA
 
+chmod 777 testd.sh
+
 #edit for different number of parties you would like to test
-./test0.sh 21 21 1 # Keygen: <total parties> <participating parties> <threshold>
+#./test0.sh 21 21 1 # Keygen: <total parties> <participating parties> <threshold>
 
 #edit for different query you would like to test
-./testd.sh 21 Programs/histogram # Decryption: <total parties> <participating parties> <threshold>
+./testd.sh 9 Programs/histogram # Decryption: <total parties> <participating parties> <threshold>
 
 
 

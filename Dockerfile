@@ -10,12 +10,15 @@ RUN apt-get update && apt-get install -y \
   m4 \
   make \
   patch \
+  pip \
   python \
   tmux \
   vim \
   wget \
   yasm \ 
   && wget -qO- https://get.haskellstack.org/ | sh
+
+RUN pip install numpy
 
 ADD source/ /root/source
 ADD config/ /root/config

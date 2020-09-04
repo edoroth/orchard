@@ -52,10 +52,16 @@ $ python kmeans.py
 ```
 OR
 ```
+$ cd /root/robustness/
 $ python geogr.py >> geogrOut
 $ python graph.py
 ``` 
 
 ### Figure 6
-Follow docker instructions for EC2 SCALE-MAMBA experiment as described above
+To simulate all committee members at once (without network costs):
+```
+$ ./testd.sh $NUM_COMMITTEE_MEMBERS $PROG_NAME
+```
+Script will output Communication Cost in bytes, as well as timing.
 
+Follow instructions for EC2 SCALE-MAMBA experiment to simulate with real network costs. Create a large EC2 instance and run ./ec2.sh on the number of desired machines.

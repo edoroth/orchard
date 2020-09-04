@@ -32,6 +32,8 @@ mv /root/test/testReconstruct.sh .
 mv /root/test/test0.sh .
 mv /root/test/testd.sh .
 mv /root/test/incr.sh .
+mv /root/test/completeTest.sh .
+
 
 make progs
 
