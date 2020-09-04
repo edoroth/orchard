@@ -37,7 +37,7 @@ $ stack run
 
 This will re-extract all benchmark algorithms into MAMBA MPC code which will be placed in the  /root/cps-fuzz/extracted directory.
 
-Follow instructions in test/ec2.sh to run on an amazon EC2 instance - should be repeated on many machines to test full functionality.
+Follow instructions in /root/test/ec2.sh to run on an amazon EC2 instance - should be repeated on many machines to test full functionality.
 
 ## Replication of Graphs/Tables
 
@@ -47,7 +47,7 @@ Examine the generated code in /root/cps-fuzz/extracted. The number of BMCS calls
 
 ### Figure 4
 ```
-$ cd robustness/
+$ cd /root/robustness/
 $ python kmeans.py
 ```
 OR

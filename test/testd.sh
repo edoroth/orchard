@@ -7,14 +7,13 @@ PROGRAM=$2
 
 echo 'Modifying Program files accordingly...'
 
-#sed -i "10s/.*/k = $(($N_1-1)) \#Committee members (total participants is k+1)/" Programs/keygen/keygen.mpc
-#sed -i "10s/.*/k = $(($N_1-1)) \#Committee members (total participants is k+1)/" Programs/$PROGRAM/$PROGRAM.mpc
+sed -i "10s/.*/k = $(($N_1-1)) \#Committee members (total participants is k+1)/" Programs/keygen/keygen.mpc
+sed -i "1s/.*/k = $(($N_1-1)) \#Committee members (total participants is k+1)/" Programs/$PROGRAM/$PROGRAM.mpc
 
 # Require THRESHOLD * 2 + 1 <= N2
 THRESHOLD=2
 
-SIZE=$3
-
+#SIZE=$3
 #sed -i "11s/.*/d = $SIZE \#Array size/" Programs/keygen/keygen.mpc
 #sed -i "11s/.*/d = $SIZE \#Array size/" Programs/$PROGRAM/$PROGRAM.mpc
 
@@ -68,7 +67,7 @@ do
   ./Player.x $i Programs/$PROGRAM & 
 done
 
-echo $Program 'costs for n='$N_1 'and size='$SIZE':'
+echo $Program 'costs for n='$N_1 ':'
 
 time (./Player.x  $(($N_PLAYERS - 1)) Programs/$PROGRAM > /dev/null 2> /dev/null ) 
 #time ( cat publicin.txt | ./Player.x  $(($N_PLAYERS - 1)) Programs/$4 > /dev/null 2> /dev/null ) 

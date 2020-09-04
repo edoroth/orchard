@@ -15,12 +15,11 @@ sudo docker run -it orchard
 
 cd SCALE-MAMBA
 
-#edit for different number of parties you would like to test, different source code
-sed -i "11s/.*/k = 20/" Programs/keygen/keygen.mpc
+#edit for different number of parties you would like to test
 ./test0.sh 21 21 1 # Keygen: <total parties> <participating parties> <threshold>
 
-sed -i "8s/.*/k = 20/" Programs/decrypt/decrypt.mpc
-./testd.sh 21 Programs/decrypt 1 # Decryption: <total parties> <participating parties> <threshold>
+#edit for different query you would like to test
+./testd.sh 21 Programs/histogram # Decryption: <total parties> <participating parties> <threshold>
 
 
 

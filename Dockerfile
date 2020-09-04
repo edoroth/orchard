@@ -27,9 +27,12 @@ ADD test/ /root/test
 ADD install.sh .
 RUN ["bash", "install.sh"]
 
+ADD dockerFiles/Programs/ /root/SCALE-MAMBA/Programs
+
 ADD README.md .
 
-#RUN apt-get upate --fix-missing
+ADD robustness/ /root/robustness
+
 RUN git clone https://github.com/hengchu/cps-fuzz.git && \
     cd cps-fuzz && \
     stack run
