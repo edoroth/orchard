@@ -46,16 +46,16 @@ Follow instructions in /root/test/ec2.sh to run on an amazon EC2 instance - shou
 Examine the generated code in /root/cps-fuzz/extracted. The number of BMCS calls in each file should be the corresponding 'Optimized' column for each query's row.
 
 ### Figure 4
-```
-$ cd /root/robustness/
-$ python kmeans.py
-```
-OR
+To generate data:
 ```
 $ cd /root/robustness/
 $ python geogr.py >> geogrOut
-$ python graph.py
 ``` 
+
+'geogrOut' now has the raw data for Figure 4. Can be graphed with (may have to be done outside of Docker):
+```
+$ python geogr.py
+```
 
 ### Figure 6
 To simulate all committee members at once (without network costs):
