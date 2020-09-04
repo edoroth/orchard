@@ -74,6 +74,7 @@ do
 done
 
 cd /root/config
+ls
 for x in chooseSubset.py renameShare.sh genSetupMSP.sh
 do 
 	mkdir config/

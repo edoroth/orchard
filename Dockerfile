@@ -14,7 +14,8 @@ RUN apt-get update && apt-get install -y \
   tmux \
   vim \
   wget \
-  yasm
+  yasm \ 
+  && wget -qO- https://get.haskellstack.org/ | sh
 
 ADD source/ /root/source
 ADD config/ /root/config
@@ -28,7 +29,7 @@ RUN ["bash", "install.sh"]
 
 ADD README.md .
 
-RUN wget -qO- https://get.haskellstack.org/ | sh
+#RUN apt-get upate --fix-missing
 RUN git clone https://github.com/hengchu/cps-fuzz.git && \
     cd cps-fuzz && \
     stack run

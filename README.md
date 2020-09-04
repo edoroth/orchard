@@ -42,5 +42,16 @@ Follow instructions in test/ec2.sh to run on an amazon EC2 instance - should be 
 ## Replication of Graphs/Tables
 
 
+# Table 2
+Examine the generated code in /root/cps-fuzz/extracted. The number of BMCS calls in each file should be the corresponding 'Optimized' column for each query's row.
 
+# Figure 4
+```
+$ cd robustness/
+$ python kmeans.py
+$ python graph.py
+``` 
+
+# Figure 6
+Follow docker instructions for EC2 SCALE-MAMBA experiment as described above
 
