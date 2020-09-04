@@ -49,6 +49,10 @@ Examine the generated code in /root/cps-fuzz/extracted. The number of BMCS calls
 ```
 $ cd robustness/
 $ python kmeans.py
+```
+OR
+```
+$ python geogr.py >> geogrOut
 $ python graph.py
 ``` 
 
