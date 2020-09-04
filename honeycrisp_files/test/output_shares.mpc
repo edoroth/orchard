@@ -1,0 +1,14 @@
+trip = sint.get_random_triple()
+a = trip[0]
+b = trip[1]
+
+a.reveal_to(1)
+b.reveal_to(1)
+
+a = (a==sint(0)) + sint(2)
+b = (b==sint(0)) + sint(3)
+c = a * b
+
+arr = [a, b, c]
+output_shares(1000, *arr)
+

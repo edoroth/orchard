@@ -1,0 +1,153 @@
+execfile('/root/SCALE-MAMBA/Programs/ring/ring.mpc')
+
+w = cint(216409912179401900965416891955038263635)**16
+
+n=512
+lgN = 9
+r = Ring(lgN, w)
+
+
+testi = 0
+
+print_ln("--------------------------------------------------")
+print_ln("Test%s: reverse", testi)
+testi = testi + 1
+
+x = cint(6)
+nBitsx = 3
+y = r.bitRev(x,3)
+
+print_ln("Expected: 3")
+print_ln("Actual: %s", y)
+
+print_ln("--------------------------------------------------")
+print_ln("Text%s: mod", testi)
+testi = testi + 1
+
+x = cint(2)
+y = cint(4)
+if_then(x % 2)
+y = cint(7)
+else_then()
+y = cint(9)
+end_if()
+
+print_ln("Expected: 9")
+print_ln("Actual: %s", y)
+
+
+print_ln("--------------------------------------------------")
+print_ln("Test%s: cint exponentiation", testi)
+testi = testi + 1
+
+x = cint(3)
+y = cint(6)
+nBitsY = 3
+
+z = r.cPow(x, y, nBitsY)
+
+print_ln("Expected: 729")
+print_ln("Actual: %s", z)
+
+print_ln("---------------------------------------------------")
+print_ln("Test%s: getWExp", testi)
+testi = testi + 1
+
+n8 = 8
+lgN8 = 3
+w8 = w**64
+r8 = Ring(lgN8, w8)
+
+
+for d in range(lgN8):
+  for i in range(n8):
+    print_str("%s ", r8.getWExp(d, i))
+  print_ln("")
+
+
+print_ln("--------------------------------------------------")
+print_ln("Test%s: checkW", testi)
+testi = testi+1
+
+neg1 = w8 ** n8
+print_ln("Expected: %s", -1)
+print_ln("Actual: %s", neg1)
+
+
+print_ln("--------------------------------------------------")
+print_ln("Test%s: c table", testi)
+testi = testi + 1
+
+n4 = 4
+lgN4 = 2
+w4 = w8 ** 2
+r4 = Ring(lgN4, w4)
+
+
+print_str("Expected:")
+print_ln(" %s %s %s %s", w4, w4, w4**3, w4**3)
+print_ln(" %s %s %s %s", w4**2, w4**2, w4**2, w4**2)
+
+print_str("Actual:")
+@for_range(lgN4)
+def findCRow(k):
+  @for_range(n4)
+  def findCPow(i):
+    print_str(" %s", r4.cPow(w4, r4.getWExp(cint(k), cint(i)), lgN4))
+print_ln("")
+
+
+print_ln("---------------------------------------------------")
+print_ln("Test%s: if cint", testi)
+testi = testi+1
+
+vTrue = cint(7)
+vFalse = cint(8)
+print_ln("Expected: %s", vFalse)
+x = cint(1)
+if_then (x == cint(0))
+print_ln("Actual: %s", vTrue)
+else_then()
+print_ln("Actual: %s", vFalse)
+end_if()
+
+print_ln("---------------------------------------------------")
+print_ln("Test%s: fastMult", testi)
+testi=testi+1
+
+a = cint.Array(4)
+b = sint.Array(4)
+for i in range(4):
+  a[i] = cint(i)
+  b[i] = sint(i)
+
+c = r4.ringMulFast(a, b)
+d = r4.ringMul(a, b)
+
+print_str("Expected:")
+for i in range(n4):
+  print_str(" %s", d[i].reveal())
+print_ln("")
+print_str("Actual:")
+for i in range(n4):
+  print_str(" %s", c[i].reveal())
+print_ln("")
+
+print_ln("---------------------------------------------------")
+print_ln("Test%s: fastMultMed", testi)
+testi = testi+1
+
+a = cint.Array(n)
+b = sint.Array(n)
+for i in range(n):
+  a[i] = cint(i)
+  b[i] = sint(1)
+
+c = r.ringMulFast(a, b)
+
+# Since b is a 1-vector, the last elem of c should be the sum
+# of elems of a
+print_ln("Expected: %s", (n-1)*n/2)
+print_ln("Actual: %s", c[n-1].reveal())
+
+print_ln("----------------------------------------------------")
