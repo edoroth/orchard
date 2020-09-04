@@ -7,8 +7,8 @@ This repository contains:
 - Complete Honeycrisp/Orchard testing infrastructures (in root-level folder)
 - Raw .mpc files for running all queries on SCALE-MAMBA (in mpc_files/)
 - Orchard translation source code (in cps_fuzz/)
-- K-means robustness experiment
-- very rough notes on translation (in orchard_translation/)
+- K-means robustness experiment (in robustness/)
+- Early-stage notes on translation from Fuzz (in orchard_translation/)
 - Entropy estimation files for optimization (not used in paper in the end)
 
 This is a partial implementation of the Orchard secure data analytics system.
