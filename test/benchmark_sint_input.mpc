@@ -1,0 +1,8 @@
+n = 1024
+
+a = sint.Array(n)
+
+@for_range(n)
+def setA(i):
+  a[i] = sint.get_private_input_from(0)
+

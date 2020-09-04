@@ -1,0 +1,98 @@
+from Compiler.util import log2
+from ring import Ring
+from LWE import LWE
+
+# Number of committee members (full protocol has k+1 users)
+k = 9
+
+# Encryption parameters
+n = 2048
+nBitsN = 11
+N_ = 1 # Half-width of binomial distribution
+lgM = 15
+ 
+# w is chosen so that w^n = -1 (mod p) 
+#   where p is the size of the prime field
+w2048 = cint(1662636632232769309036)
+r = Ring(n, nBitsN, w2048)
+
+lwe = LWE(r, N_, lgM) 
+
+# length of messages (array size)
+N = n
+
+def norm(z):
+	mag = sint(0)
+	for i in range(len(z)):
+		mag += z[i]**2
+	return mag
+
+def encrypt(a, b, n):
+	[u, v] = lwe.enc(a,b,n)
+	return u
+
+def decrypt(enc_u, enc_v, s):
+	return lwe.dec(enc_u, enc_v, s)
+
+
+# Noises encryption with noise provided from k committee members, decrypts
+# by using shares of secret key, and returns noised (decrypted) result,
+# after applying any additional orange zone computation.
+def noiseAndDecrypt(a, b, enc_u, enc_v, secret_key_shares, noise, w):
+
+	total_noise = Array(N, sint)
+	s = Array(N, sint)
+
+	for i in range(0, k):
+		for j in range(N):
+			# Reconstruct secret key
+			s[j] += secret_key_shares[i][j]
+			
+			#Take all users' noise and sum up homomorphically
+			total_noise[j] += noise[i][j]	
+
+	# Specific query goes here	
+	z = decrypt(enc_u, enc_v, s)
+	w = w + z
+	return w
+
+# Returns message if sufficiently far from delta, otherwise returns null.
+def threshold(query_result, T, delta):
+	if (abs(query_result - T) < delta):
+		print_ln("0")
+	else:
+		print_ln("Result is %s", query_result.reveal_to[k]);
+
+
+#Pull input from users
+
+# Get array of secret key shares and noise from each committee member
+secret_key_shares = Matrix(k, N, sint)
+noise = Matrix(k, N, sint)
+for i in range(k):
+	for j in range(N):
+		secret_key_shares[i][j] = sint.get_raw_input_from(i)
+		noise[i][j] = sint.get_raw_input_from(i)
+
+
+# A provides public key, encrypted aggregate data, threshold
+
+a = [sint.get_raw_input_from(k) for i in range(N)]
+b = [sint.get_raw_input_from(k) for i in range(N)]
+enc_u = [sint.get_raw_input_from(k) for i in range(N)]
+enc_v = [sint.get_raw_input_from(k) for i in range(N)]
+T = sint.get_raw_input_from(k)
+delta = sint.get_raw_input_from(k)
+
+
+# State from aggregator (specific to query)
+
+# Previous round's weight vector, provided by aggregator
+w = sint.get_raw_input_from(k)
+
+# Decryption and main computation
+query_result = noiseAndDecrypt(a, b, enc_u, enc_v, secret_key_shares, noise, w)
+
+# Final release
+threshold(query_result, T, delta)
+
