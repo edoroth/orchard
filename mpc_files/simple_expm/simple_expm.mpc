@@ -1,0 +1,50 @@
+import mpc_math
+def fun_comp(g, f):
+  def inner(x):
+    return g(f(x))
+  return inner
+
+
+# Exponential mechanism, returns one value
+# Assuming we have a list of quality scores 
+def exp_mech(scores):
+
+	new_array = sint.Array(max_size)
+#	new_array = scores
+
+        # keep a running sum of the cost array.
+        sum = MemValue(sfix(0.0))
+	n = len(new_array)
+        @for_range(n)
+        def f(i):
+                sum.write(sum + new_array[i])
+
+        # this should be (log(sum)) to get number of bits we should sample from. 
+#	def while_body():
+#		x.write(x+1)
+#		return (x < sum)
+#
+#	x = MemValue(sint(0))
+#	do_while(while_body)
+
+	#TODO: should be log(ceil(sum))
+	N_bits = 5
+
+        # sample random int w/i range of total sum of costs
+        #a = sint.get_random_int(N_bits)
+        a = sfloat(sint.get_random_int(N_bits))
+
+        # Go through running sum again and pull out correct sampled value
+        tmp = MemValue(sfix(0.0))
+        @for_range(len(scores))
+        def check(i):
+                if(a <= tmp):
+                        # Return this index 
+                        return i
+                else:
+                        tmp.write(tmp + scores[i])
+
+        return tmp
+  
+
+exp_mech([1.0,2.0,3.0])

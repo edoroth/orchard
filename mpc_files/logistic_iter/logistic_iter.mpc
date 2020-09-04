@@ -1,0 +1,73 @@
+k = 39
+
+def laplace_fx(center, width):
+        return center + sint.get_random_bit(width)
+
+orange_input_0_ = sint.get_private_input_from(k)
+
+def anonymous_fun_3_(empty_closure_1_):
+  """
+  empty_closure_1_: ()
+  """
+  def anonymous_fun_4_(orange_input_0_):
+    """
+    orange_input_0_: Double
+    """
+    return laplace_fx(cfix(1.0),orange_input_0_)
+  return anonymous_fun_4_
+
+
+
+def anonymous_fun_45_(empty_closure_3_):
+  """
+  empty_closure_3_: ()
+  """
+  def anonymous_fun_46_(par_release_input_3_):
+    """
+    par_release_input_3_: (Double,(Double,(Double,(Double,Double))))
+    """
+    def anonymous_fun_47_(orange_input_1_):
+      """
+      orange_input_1_: Double
+      """
+      return laplace_fx(cfix(1.0),orange_input_1_)
+    def anonymous_fun_48_(par_release_input_2_):
+      """
+      par_release_input_2_: (Double,(Double,(Double,Double)))
+      """
+      def anonymous_fun_49_(orange_input_2_):
+        """
+        orange_input_2_: Double
+        """
+        return laplace_fx(cfix(1.0),orange_input_2_)
+      def anonymous_fun_50_(par_release_input_1_):
+        """
+        par_release_input_1_: (Double,(Double,Double))
+        """
+        def anonymous_fun_51_(orange_input_3_):
+          """
+          orange_input_3_: Double
+          """
+          return laplace_fx(cfix(1.0),orange_input_3_)
+        def anonymous_fun_52_(par_release_input_0_):
+          """
+          par_release_input_0_: (Double,Double)
+          """
+          def anonymous_fun_53_(orange_input_4_):
+            """
+            orange_input_4_: Double
+            """
+            return laplace_fx(cfix(1.0),orange_input_4_)
+          def anonymous_fun_54_(orange_input_5_):
+            """
+            orange_input_5_: Double
+            """
+            return laplace_fx(cfix(1.0),orange_input_5_)
+          return (anonymous_fun_53_(par_release_input_0_[0]),anonymous_fun_54_(par_release_input_0_[1]))
+        return (anonymous_fun_51_(par_release_input_1_[0]),anonymous_fun_52_(par_release_input_1_[1]))
+      return (anonymous_fun_49_(par_release_input_2_[0]),anonymous_fun_50_(par_release_input_2_[1]))
+    return (anonymous_fun_47_(par_release_input_3_[0]),anonymous_fun_48_(par_release_input_3_[1]))
+  return anonymous_fun_46_
+
+anonymous_fun_3_(())
+anonymous_fun_45_(())

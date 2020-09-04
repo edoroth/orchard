@@ -1,0 +1,118 @@
+k = 39
+
+def laplace_fx(center, width):
+        return center + sint.get_random_bit(width)
+
+orange_input_0_ = sint.get_private_input_from(k)
+orange_input_2_ = sint.get_private_input_from(k)
+orange_input_3_ = sint.get_private_input_from(k)
+orange_input_4_ = sint.get_private_input_from(k)
+orange_input_5_ = sint.get_private_input_from(k)
+orange_input_6_ = sint.get_private_input_from(k)
+orange_input_7_ = sint.get_private_input_from(k)
+orange_input_8_ = sint.get_private_input_from(k)
+
+
+def anonymous_fun_130_(empty_closure_1_):
+  """
+  empty_closure_1_: ()
+  """
+  def anonymous_fun_131_(par_release_input_8_):
+    """
+    par_release_input_8_: (Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,Double)))))))))
+    """
+    def anonymous_fun_132_(orange_input_0_):
+      """
+      orange_input_0_: Double
+      """
+      return laplace_fx(cfix(1.0),orange_input_0_)
+    def anonymous_fun_133_(par_release_input_7_):
+      """
+      par_release_input_7_: (Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,Double))))))))
+      """
+      def anonymous_fun_134_(orange_input_1_):
+        """
+        orange_input_1_: Double
+        """
+        return laplace_fx(cfix(1.0),orange_input_1_)
+      def anonymous_fun_135_(par_release_input_6_):
+        """
+        par_release_input_6_: (Double,(Double,(Double,(Double,(Double,(Double,(Double,Double)))))))
+        """
+        def anonymous_fun_136_(orange_input_2_):
+          """
+          orange_input_2_: Double
+          """
+          return laplace_fx(cfix(1.0),orange_input_2_)
+        def anonymous_fun_137_(par_release_input_5_):
+          """
+          par_release_input_5_: (Double,(Double,(Double,(Double,(Double,(Double,Double))))))
+          """
+          def anonymous_fun_138_(orange_input_3_):
+            """
+            orange_input_3_: Double
+            """
+            return laplace_fx(cfix(1.0),orange_input_3_)
+          def anonymous_fun_139_(par_release_input_4_):
+            """
+            par_release_input_4_: (Double,(Double,(Double,(Double,(Double,Double)))))
+            """
+            def anonymous_fun_140_(orange_input_4_):
+              """
+              orange_input_4_: Double
+              """
+              return laplace_fx(cfix(1.0),orange_input_4_)
+            def anonymous_fun_141_(par_release_input_3_):
+              """
+              par_release_input_3_: (Double,(Double,(Double,(Double,Double))))
+              """
+              def anonymous_fun_142_(orange_input_5_):
+                """
+                orange_input_5_: Double
+                """
+                return laplace_fx(cfix(1.0),orange_input_5_)
+              def anonymous_fun_143_(par_release_input_2_):
+                """
+                par_release_input_2_: (Double,(Double,(Double,Double)))
+                """
+                def anonymous_fun_144_(orange_input_6_):
+                  """
+                  orange_input_6_: Double
+                  """
+                  return laplace_fx(cfix(1.0),orange_input_6_)
+                def anonymous_fun_145_(par_release_input_1_):
+                  """
+                  par_release_input_1_: (Double,(Double,Double))
+                  """
+                  def anonymous_fun_146_(orange_input_7_):
+                    """
+                    orange_input_7_: Double
+                    """
+                    return laplace_fx(cfix(1.0),orange_input_7_)
+                  def anonymous_fun_147_(par_release_input_0_):
+                    """
+                    par_release_input_0_: (Double,Double)
+                    """
+                    def anonymous_fun_148_(orange_input_8_):
+                      """
+                      orange_input_8_: Double
+                      """
+                      return laplace_fx(cfix(1.0),orange_input_8_)
+                    def anonymous_fun_149_(orange_input_9_):
+                      """
+                      orange_input_9_: Double
+                      """
+                      return laplace_fx(cfix(1.0),orange_input_9_)
+                    return (anonymous_fun_148_(par_release_input_0_[0]),anonymous_fun_149_(par_release_input_0_[1]))
+                  return (anonymous_fun_146_(par_release_input_1_[0]),anonymous_fun_147_(par_release_input_1_[1]))
+                return (anonymous_fun_144_(par_release_input_2_[0]),anonymous_fun_145_(par_release_input_2_[1]))
+              return (anonymous_fun_142_(par_release_input_3_[0]),anonymous_fun_143_(par_release_input_3_[1]))
+            return (anonymous_fun_140_(par_release_input_4_[0]),anonymous_fun_141_(par_release_input_4_[1]))
+          return (anonymous_fun_138_(par_release_input_5_[0]),anonymous_fun_139_(par_release_input_5_[1]))
+        return (anonymous_fun_136_(par_release_input_6_[0]),anonymous_fun_137_(par_release_input_6_[1]))
+      return (anonymous_fun_134_(par_release_input_7_[0]),anonymous_fun_135_(par_release_input_7_[1]))
+    return (anonymous_fun_132_(par_release_input_8_[0]),anonymous_fun_133_(par_release_input_8_[1]))
+  return anonymous_fun_131_
+
+
+anonymous_fun_130_(())

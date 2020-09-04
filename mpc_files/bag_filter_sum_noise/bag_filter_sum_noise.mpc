@@ -1,0 +1,54 @@
+k = 39
+
+import math
+import mpc_math
+def fun_comp(g, f):
+  def inner(x):
+    return g(f(x))
+  return inner
+
+def laplace_fx(center, width):
+        return center + sint.get_random_bit(width)
+
+orange_input_0_ = sint.Array(2)
+orange_input_1_ = sint.Array(2)
+orange_input_2_ = sint.Array(2)
+@for_range(2)
+def set(i):
+  orange_input_0_[i] = sint.get_private_input_from(k)
+  orange_input_1_[i] = sint.get_private_input_from(k)
+  orange_input_2_[i] = sint.get_private_input_from(k)
+
+
+def anonymous_fun_21_():
+  """
+  empty_closure_1_: ()
+  """
+  def anonymous_fun_22_(par_release_input_1_):
+    """
+    par_release_input_1_: (((Double,Double),(Double,Double)),(Double,Double))
+    """
+    def anonymous_fun_23_(par_release_input_0_):
+      """
+      par_release_input_0_: ((Double,Double),(Double,Double))
+      """
+      def anonymous_fun_24_(orange_input_0_):
+        """
+        orange_input_0_: (Double,Double)
+        """
+        return laplace_fx(cfix(1.0),orange_input_0_[0] + orange_input_0_[1])
+      def anonymous_fun_25_(orange_input_1_):
+        """
+        orange_input_1_: (Double,Double)
+        """
+        return laplace_fx(cfix(2.0),orange_input_1_[0] + orange_input_1_[1])
+      return (anonymous_fun_24_(par_release_input_0_[0]),anonymous_fun_25_(par_release_input_0_[1]))
+    def anonymous_fun_26_(orange_input_2_):
+      """
+      orange_input_2_: (Double,Double)
+      """
+      return laplace_fx(cfix(3.0),orange_input_2_[0] + orange_input_2_[1])
+    return (anonymous_fun_23_(par_release_input_1_[0]),anonymous_fun_26_(par_release_input_1_[1]))
+  return anonymous_fun_22_
+
+anonymous_fun_21_()

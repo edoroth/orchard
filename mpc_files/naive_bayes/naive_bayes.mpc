@@ -1,0 +1,30 @@
+k = 39
+
+def laplace_fx(center, width):
+        return center + sint.get_random_bit(width)
+
+orange_input_19_ = sint.get_private_input_from(k)
+orange_input_20_ = sint.get_private_input_from(k)
+
+def anonymous_fun_101_(empty_closure_21_):
+  """
+  empty_closure_21_: ()
+  """
+  def anonymous_fun_102_(par_release_input_9_):
+    """
+    par_release_input_9_: (Double,Double)
+    """
+    def anonymous_fun_103_(orange_input_19_):
+      """
+      orange_input_19_: Double
+      """
+      return laplace_fx(cfix(1.0),orange_input_19_)
+    def anonymous_fun_104_(orange_input_20_):
+      """
+      orange_input_20_: Double
+      """
+      return laplace_fx(cfix(1.0),orange_input_20_)
+    return (anonymous_fun_103_(par_release_input_9_[0]),anonymous_fun_104_(par_release_input_9_[1]))
+  return anonymous_fun_102_
+
+anonymous_fun_101_(())

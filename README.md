@@ -35,9 +35,9 @@ $ cd /root/cps-fuzz
 $ stack run
 ```
 
-This will re-extract all benchmark algorithms into MAMBA MPC code which will be placed in the  /root/cps-fuzz/extracted directory.
+This will re-extract all benchmark algorithms into MAMBA MPC code which will be placed in the  /root/cps-fuzz/extracted directory (note: this code contains both red and orange-zone code. This is then split into the pure orange-zone code inside of /root/SCALE-MAMBA/Programs/).
 
-Follow instructions in /root/test/ec2.sh to run on an amazon EC2 instance - should be repeated on many machines to test full functionality.
+Follow instructions in /root/test/ec2.sh to run orange-zone code on an amazon EC2 instance - should be repeated on many machines to test full functionality.
 
 ## Replication of Graphs/Tables
 
@@ -60,8 +60,27 @@ $ python geogr.py
 ### Figure 6
 To simulate all committee members at once (without network costs):
 ```
+$ cd /root/SCALE-MAMBA/
 $ ./testd.sh $NUM_COMMITTEE_MEMBERS $PROG_NAME
 ```
 Script will output Communication Cost in bytes, as well as timing.
 
-Follow instructions for EC2 SCALE-MAMBA experiment to simulate with real network costs. Create a large EC2 instance and run ./ec2.sh on the number of desired machines.
+Program names to test:
+- bag_filter_sum_noise
+- kmeans_iter
+- logistic_iter
+- naive_bayes
+- pca
+- perceptron_iter
+- simple_expm
+- above_threshold
+- histogram
+- vec_sum
+- count_mean_sketch
+- id3_iter
+- cdf
+- range_query
+- kmedian_iter_medium
+
+Follow instructions for EC2 SCALE-MAMBA experiment to simulate with real network costs. For each omittee member, create a large EC2 instance and run ./ec2.sh on the number of desired machines.
+

@@ -1,0 +1,308 @@
+k = 39
+
+def laplace_fx(center, width):
+        return center + sint.get_random_bit(width)
+
+def anonymous_fun_90_(empty_closure_1_):
+  """
+  empty_closure_1_: ()
+  """
+  def anonymous_fun_91_(par_release_input_28_):
+    """
+    par_release_input_28_: (Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,Double)))))))))))))))))))))))))))))
+    """
+    def anonymous_fun_92_(orange_input_0_):
+      """
+      orange_input_0_: Double
+      """
+      return laplace_fx(cfix(1.0),orange_input_0_)
+    def anonymous_fun_93_(par_release_input_27_):
+      """
+      par_release_input_27_: (Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,Double))))))))))))))))))))))))))))
+      """
+      def anonymous_fun_94_(orange_input_1_):
+        """
+        orange_input_1_: Double
+        """
+        return laplace_fx(cfix(1.0),orange_input_1_)
+      def anonymous_fun_95_(par_release_input_26_):
+        """
+        par_release_input_26_: (Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,Double)))))))))))))))))))))))))))
+        """
+        def anonymous_fun_96_(orange_input_2_):
+          """
+          orange_input_2_: Double
+          """
+          return laplace_fx(cfix(1.0),orange_input_2_)
+        def anonymous_fun_97_(par_release_input_25_):
+          """
+          par_release_input_25_: (Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,Double))))))))))))))))))))))))))
+          """
+          def anonymous_fun_98_(orange_input_3_):
+            """
+            orange_input_3_: Double
+            """
+            return laplace_fx(cfix(1.0),orange_input_3_)
+          def anonymous_fun_99_(par_release_input_24_):
+            """
+            par_release_input_24_: (Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,Double)))))))))))))))))))))))))
+            """
+            def anonymous_fun_100_(orange_input_4_):
+              """
+              orange_input_4_: Double
+              """
+              return laplace_fx(cfix(1.0),orange_input_4_)
+            def anonymous_fun_101_(par_release_input_23_):
+              """
+              par_release_input_23_: (Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,Double))))))))))))))))))))))))
+              """
+              def anonymous_fun_102_(orange_input_5_):
+                """
+                orange_input_5_: Double
+                """
+                return laplace_fx(cfix(1.0),orange_input_5_)
+              def anonymous_fun_103_(par_release_input_22_):
+                """
+                par_release_input_22_: (Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,Double)))))))))))))))))))))))
+                """
+                def anonymous_fun_104_(orange_input_6_):
+                  """
+                  orange_input_6_: Double
+                  """
+                  return laplace_fx(cfix(1.0),orange_input_6_)
+                def anonymous_fun_105_(par_release_input_21_):
+                  """
+                  par_release_input_21_: (Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,Double))))))))))))))))))))))
+                  """
+                  def anonymous_fun_106_(orange_input_7_):
+                    """
+                    orange_input_7_: Double
+                    """
+                    return laplace_fx(cfix(1.0),orange_input_7_)
+                  def anonymous_fun_107_(par_release_input_20_):
+                    """
+                    par_release_input_20_: (Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,Double)))))))))))))))))))))
+                    """
+                    def anonymous_fun_108_(orange_input_8_):
+                      """
+                      orange_input_8_: Double
+                      """
+                      return laplace_fx(cfix(1.0),orange_input_8_)
+                    def anonymous_fun_109_(par_release_input_19_):
+                      """
+                      par_release_input_19_: (Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,Double))))))))))))))))))))
+                      """
+                      def anonymous_fun_110_(orange_input_9_):
+                        """
+                        orange_input_9_: Double
+                        """
+                        return laplace_fx(cfix(1.0),orange_input_9_)
+                      def anonymous_fun_111_(par_release_input_18_):
+                        """
+                        par_release_input_18_: (Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,Double)))))))))))))))))))
+                        """
+                        def anonymous_fun_112_(orange_input_10_):
+                          """
+                          orange_input_10_: Double
+                          """
+                          return laplace_fx(cfix(1.0),orange_input_10_)
+                        def anonymous_fun_113_(par_release_input_17_):
+                          """
+                          par_release_input_17_: (Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,Double))))))))))))))))))
+                          """
+                          def anonymous_fun_114_(orange_input_11_):
+                            """
+                            orange_input_11_: Double
+                            """
+                            return laplace_fx(cfix(1.0),orange_input_11_)
+                          def anonymous_fun_115_(par_release_input_16_):
+                            """
+                            par_release_input_16_: (Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,Double)))))))))))))))))
+                            """
+                            def anonymous_fun_116_(orange_input_12_):
+                              """
+                              orange_input_12_: Double
+                              """
+                              return laplace_fx(cfix(1.0),orange_input_12_)
+                            def anonymous_fun_117_(par_release_input_15_):
+                              """
+                              par_release_input_15_: (Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,Double))))))))))))))))
+                              """
+                              def anonymous_fun_118_(orange_input_13_):
+                                """
+                                orange_input_13_: Double
+                                """
+                                return laplace_fx(cfix(1.0),orange_input_13_)
+                              def anonymous_fun_119_(par_release_input_14_):
+                                """
+                                par_release_input_14_: (Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,Double)))))))))))))))
+                                """
+                                def anonymous_fun_120_(orange_input_14_):
+                                  """
+                                  orange_input_14_: Double
+                                  """
+                                  return laplace_fx(cfix(1.0),orange_input_14_)
+                                def anonymous_fun_121_(par_release_input_13_):
+                                  """
+                                  par_release_input_13_: (Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,Double))))))))))))))
+                                  """
+                                  def anonymous_fun_122_(orange_input_15_):
+                                    """
+                                    orange_input_15_: Double
+                                    """
+                                    return laplace_fx(cfix(1.0),orange_input_15_)
+                                  def anonymous_fun_123_(par_release_input_12_):
+                                    """
+                                    par_release_input_12_: (Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,Double)))))))))))))
+                                    """
+                                    def anonymous_fun_124_(orange_input_16_):
+                                      """
+                                      orange_input_16_: Double
+                                      """
+                                      return laplace_fx(cfix(1.0),orange_input_16_)
+                                    def anonymous_fun_125_(par_release_input_11_):
+                                      """
+                                      par_release_input_11_: (Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,Double))))))))))))
+                                      """
+                                      def anonymous_fun_126_(orange_input_17_):
+                                        """
+                                        orange_input_17_: Double
+                                        """
+                                        return laplace_fx(cfix(1.0),orange_input_17_)
+                                      def anonymous_fun_127_(par_release_input_10_):
+                                        """
+                                        par_release_input_10_: (Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,Double)))))))))))
+                                        """
+                                        def anonymous_fun_128_(orange_input_18_):
+                                          """
+                                          orange_input_18_: Double
+                                          """
+                                          return laplace_fx(cfix(1.0),orange_input_18_)
+                                        def anonymous_fun_129_(par_release_input_9_):
+                                          """
+                                          par_release_input_9_: (Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,Double))))))))))
+                                          """
+                                          def anonymous_fun_130_(orange_input_19_):
+                                            """
+                                            orange_input_19_: Double
+                                            """
+                                            return laplace_fx(cfix(1.0),orange_input_19_)
+                                          def anonymous_fun_131_(par_release_input_8_):
+                                            """
+                                            par_release_input_8_: (Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,Double)))))))))
+                                            """
+                                            def anonymous_fun_132_(orange_input_20_):
+                                              """
+                                              orange_input_20_: Double
+                                              """
+                                              return laplace_fx(cfix(1.0),orange_input_20_)
+                                            def anonymous_fun_133_(par_release_input_7_):
+                                              """
+                                              par_release_input_7_: (Double,(Double,(Double,(Double,(Double,(Double,(Double,(Double,Double))))))))
+                                              """
+                                              def anonymous_fun_134_(orange_input_21_):
+                                                """
+                                                orange_input_21_: Double
+                                                """
+                                                return laplace_fx(cfix(1.0),orange_input_21_)
+                                              def anonymous_fun_135_(par_release_input_6_):
+                                                """
+                                                par_release_input_6_: (Double,(Double,(Double,(Double,(Double,(Double,(Double,Double)))))))
+                                                """
+                                                def anonymous_fun_136_(orange_input_22_):
+                                                  """
+                                                  orange_input_22_: Double
+                                                  """
+                                                  return laplace_fx(cfix(1.0),orange_input_22_)
+                                                def anonymous_fun_137_(par_release_input_5_):
+                                                  """
+                                                  par_release_input_5_: (Double,(Double,(Double,(Double,(Double,(Double,Double))))))
+                                                  """
+                                                  def anonymous_fun_138_(orange_input_23_):
+                                                    """
+                                                    orange_input_23_: Double
+                                                    """
+                                                    return laplace_fx(cfix(1.0),orange_input_23_)
+                                                  def anonymous_fun_139_(par_release_input_4_):
+                                                    """
+                                                    par_release_input_4_: (Double,(Double,(Double,(Double,(Double,Double)))))
+                                                    """
+                                                    def anonymous_fun_140_(orange_input_24_):
+                                                      """
+                                                      orange_input_24_: Double
+                                                      """
+                                                      return laplace_fx(cfix(1.0),orange_input_24_)
+                                                    def anonymous_fun_141_(par_release_input_3_):
+                                                      """
+                                                      par_release_input_3_: (Double,(Double,(Double,(Double,Double))))
+                                                      """
+                                                      def anonymous_fun_142_(orange_input_25_):
+                                                        """
+                                                        orange_input_25_: Double
+                                                        """
+                                                        return laplace_fx(cfix(1.0),orange_input_25_)
+                                                      def anonymous_fun_143_(par_release_input_2_):
+                                                        """
+                                                        par_release_input_2_: (Double,(Double,(Double,Double)))
+                                                        """
+                                                        def anonymous_fun_144_(orange_input_26_):
+                                                          """
+                                                          orange_input_26_: Double
+                                                          """
+                                                          return laplace_fx(cfix(1.0),orange_input_26_)
+                                                        def anonymous_fun_145_(par_release_input_1_):
+                                                          """
+                                                          par_release_input_1_: (Double,(Double,Double))
+                                                          """
+                                                          def anonymous_fun_146_(orange_input_27_):
+                                                            """
+                                                            orange_input_27_: Double
+                                                            """
+                                                            return laplace_fx(cfix(1.0),orange_input_27_)
+                                                          def anonymous_fun_147_(par_release_input_0_):
+                                                            """
+                                                            par_release_input_0_: (Double,Double)
+                                                            """
+                                                            def anonymous_fun_148_(orange_input_28_):
+                                                              """
+                                                              orange_input_28_: Double
+                                                              """
+                                                              return laplace_fx(cfix(1.0),orange_input_28_)
+                                                            def anonymous_fun_149_(orange_input_29_):
+                                                              """
+                                                              orange_input_29_: Double
+                                                              """
+                                                              return laplace_fx(cfix(1.0),orange_input_29_)
+                                                            return (anonymous_fun_148_(par_release_input_0_[0]),anonymous_fun_149_(par_release_input_0_[1]))
+                                                          return (anonymous_fun_146_(par_release_input_1_[0]),anonymous_fun_147_(par_release_input_1_[1]))
+                                                        return (anonymous_fun_144_(par_release_input_2_[0]),anonymous_fun_145_(par_release_input_2_[1]))
+                                                      return (anonymous_fun_142_(par_release_input_3_[0]),anonymous_fun_143_(par_release_input_3_[1]))
+                                                    return (anonymous_fun_140_(par_release_input_4_[0]),anonymous_fun_141_(par_release_input_4_[1]))
+                                                  return (anonymous_fun_138_(par_release_input_5_[0]),anonymous_fun_139_(par_release_input_5_[1]))
+                                                return (anonymous_fun_136_(par_release_input_6_[0]),anonymous_fun_137_(par_release_input_6_[1]))
+                                              return (anonymous_fun_134_(par_release_input_7_[0]),anonymous_fun_135_(par_release_input_7_[1]))
+                                            return (anonymous_fun_132_(par_release_input_8_[0]),anonymous_fun_133_(par_release_input_8_[1]))
+                                          return (anonymous_fun_130_(par_release_input_9_[0]),anonymous_fun_131_(par_release_input_9_[1]))
+                                        return (anonymous_fun_128_(par_release_input_10_[0]),anonymous_fun_129_(par_release_input_10_[1]))
+                                      return (anonymous_fun_126_(par_release_input_11_[0]),anonymous_fun_127_(par_release_input_11_[1]))
+                                    return (anonymous_fun_124_(par_release_input_12_[0]),anonymous_fun_125_(par_release_input_12_[1]))
+                                  return (anonymous_fun_122_(par_release_input_13_[0]),anonymous_fun_123_(par_release_input_13_[1]))
+                                return (anonymous_fun_120_(par_release_input_14_[0]),anonymous_fun_121_(par_release_input_14_[1]))
+                              return (anonymous_fun_118_(par_release_input_15_[0]),anonymous_fun_119_(par_release_input_15_[1]))
+                            return (anonymous_fun_116_(par_release_input_16_[0]),anonymous_fun_117_(par_release_input_16_[1]))
+                          return (anonymous_fun_114_(par_release_input_17_[0]),anonymous_fun_115_(par_release_input_17_[1]))
+                        return (anonymous_fun_112_(par_release_input_18_[0]),anonymous_fun_113_(par_release_input_18_[1]))
+                      return (anonymous_fun_110_(par_release_input_19_[0]),anonymous_fun_111_(par_release_input_19_[1]))
+                    return (anonymous_fun_108_(par_release_input_20_[0]),anonymous_fun_109_(par_release_input_20_[1]))
+                  return (anonymous_fun_106_(par_release_input_21_[0]),anonymous_fun_107_(par_release_input_21_[1]))
+                return (anonymous_fun_104_(par_release_input_22_[0]),anonymous_fun_105_(par_release_input_22_[1]))
+              return (anonymous_fun_102_(par_release_input_23_[0]),anonymous_fun_103_(par_release_input_23_[1]))
+            return (anonymous_fun_100_(par_release_input_24_[0]),anonymous_fun_101_(par_release_input_24_[1]))
+          return (anonymous_fun_98_(par_release_input_25_[0]),anonymous_fun_99_(par_release_input_25_[1]))
+        return (anonymous_fun_96_(par_release_input_26_[0]),anonymous_fun_97_(par_release_input_26_[1]))
+      return (anonymous_fun_94_(par_release_input_27_[0]),anonymous_fun_95_(par_release_input_27_[1]))
+    return (anonymous_fun_92_(par_release_input_28_[0]),anonymous_fun_93_(par_release_input_28_[1]))
+  return anonymous_fun_91_
+
+
+anonymous_fun_90_(())
