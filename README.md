@@ -82,5 +82,5 @@ Program names to test:
 - range_query
 - kmedian_iter_medium
 
-Follow instructions for EC2 SCALE-MAMBA experiment to simulate with real network costs. For each omittee member, create a large EC2 instance and run ./ec2.sh on the number of desired machines.
+Follow instructions for EC2 SCALE-MAMBA experiment to simulate with real network costs. For each comittee member, create a large EC2 instance and run ./ec2.sh on the number of desired machines.
 
