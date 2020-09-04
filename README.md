@@ -31,8 +31,10 @@ Please note that any changes you make in the container are not persistent.
 
 To re-run the code extraction process:
 - clear the /root/cps-fuzz/extracted directory
-- cd /root/cps-fuzz
-- run 'stack run'
+```
+$ cd /root/cps-fuzz
+$stack run
+```
 
 This will re-extract all benchmark algorithms into MAMBA MPC code which will be placed in the  /root/cps-fuzz/extracted directory.
 
