@@ -22,7 +22,7 @@ ADD depends.sh .
 RUN ["bash", "depends.sh"]
 
 ADD SMtweaks/ /root/SMtweaks
-ADD test/ /root/test
+ADD dockerFiles/ /root/test
 ADD install.sh .
 RUN ["bash", "install.sh"]
 

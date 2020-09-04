@@ -1,8 +1,0 @@
-n = 64
-
-a = sint.Array(n)
-
-@for_range(n)
-def setA(i):
-  a[i] = sint.get_random_int(1)
-

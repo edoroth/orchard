@@ -1,7 +1,0 @@
-trip = [sint(), sint(), sint()]
-
-input_shares(1000, *trip)
-
-trip[0].reveal_to(0)
-trip[1].reveal_to(0)
-trip[2].reveal_to(0)

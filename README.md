@@ -29,16 +29,18 @@ Please note that any changes you make in the container are not persistent.
 
 ## Experiments
 
-To re-run the code extraction process:
-- clear the /root/cps-fuzz/extracted directory
+To re-run the code extraction process, clear the /root/cps-fuzz/extracted directory, then:
 ```
 $ cd /root/cps-fuzz
-$stack run
+$ stack run
 ```
 
 This will re-extract all benchmark algorithms into MAMBA MPC code which will be placed in the  /root/cps-fuzz/extracted directory.
 
 Follow instructions in test/ec2.sh to run on an amazon EC2 instance - should be repeated on many machines to test full functionality.
+
+## Replication of Graphs/Tables
+
 
 
 
