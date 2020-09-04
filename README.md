@@ -29,7 +29,7 @@ Please note that any changes you make in the container are not persistent.
 
 ## Experiments
 
-To re-run the code extraction process, clear the /root/cps-fuzz/extracted directory, then:
+To re-run the code extraction process inside of the docker container, clear the /root/cps-fuzz/extracted directory, then:
 ```
 $ cd /root/cps-fuzz
 $ stack run
@@ -37,10 +37,11 @@ $ stack run
 
 This will re-extract all benchmark algorithms into MAMBA MPC code which will be placed in the  /root/cps-fuzz/extracted directory (note: this code contains both red and orange-zone code. This is then split into the pure orange-zone code inside of /root/SCALE-MAMBA/Programs/).
 
-Follow instructions in /root/test/ec2.sh to run orange-zone code on an amazon EC2 instance - should be repeated on many machines to test full functionality.
+To run on an amazon EC2 instance, first follow instructions in /root/test/ec2.sh to run orange-zone code - this should be repeated on many machines to test full functionality. This script creates a docker on its own for each instance.
 
 ## Replication of Graphs/Tables
 
+(assuming you are running inside of the docker created above.)
 
 ### Table 2
 Examine the generated code in /root/cps-fuzz/extracted. The number of BMCS calls in each file should be the corresponding 'Optimized' column for each query's row.
