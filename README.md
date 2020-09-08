@@ -17,7 +17,7 @@ It is implemented within a docker to allow for easy set-up and cross-compatabili
 
 ## Docker Setup
 Create a Docker image. This will take a few minutes. You only have to do this
-once.
+once (note: it may be necessary to allocate at least 8GB memory to Docker).
 ```
 $ docker build -t orchard .
 ```
