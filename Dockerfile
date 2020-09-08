@@ -34,7 +34,7 @@ ADD test/ /root/test
 ADD install.sh .
 RUN ["bash", "install.sh"]
 
-ADD dockerFiles/Programs/ /root/SCALE-MAMBA/Programs
+ADD mpc_files/Programs/ /root/SCALE-MAMBA/Programs
 
 ADD README.md .
 
