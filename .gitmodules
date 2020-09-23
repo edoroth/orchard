@@ -1,0 +1,3 @@
+[submodule "cps-fuzz"]
+	path = cps-fuzz
+	url = https://github.com/hengchu/cps-fuzz
