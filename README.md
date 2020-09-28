@@ -3,17 +3,25 @@ Implementation of Orchard
 
 ## Orchard
 
-This repository contains:
-- Complete Honeycrisp/Orchard testing infrastructures (in root-level folder)
-- Raw .mpc files for running all queries on SCALE-MAMBA (in mpc_files/)
-- Orchard translation source code (in cps_fuzz/)
-- K-means robustness experiment (in robustness/)
-- Early-stage notes on translation from Fuzz (in orchard_translation/)
-- Entropy estimation files for optimization (not used in paper in the end)
+This is a partial implementation of the Orchard secure data analytics system. It does *not* include code to run a massively distributed data collection scheme on billions of devices. However, it does include the Orchard query engine which translates centralized queries into distributed ones. The resulting code is split into three parts: red, orange, and green zone code.
+- The orange zone code can be executed inside of an MPC framework. We provide a prototype of this infrastructure, with the ability to simulate many committee devices on one machine. For ease of use and to prevent inordinate costs, we do not provide the EC2 infrastructure to run these queries in a fully distributed setting.
+- The red zone code will be executed on user devices. We do not provide the infrastructure to run this code in a distributed way, but we provide estimates on the total costs associated with all user operations in Orchard.
+- The green zone code will be executed on a centralized aggregator with access to massive resources, such as a data center. We provide estimates on the total costs associated with all agregator operations as well.
 
-This is a partial implementation of the Orchard secure data analytics system.
+This repository also contains a simulation for malicious users attacking a facility clustering algorithm, and will produce the results that we report in the paper.
 
-It is implemented within a docker to allow for easy set-up and cross-compatability performance.
+In summary, this repository contains:
+- Complete orange-zone testing infrastructures (in root-level folder)
+- Raw .mpc files for all sample queries in the Orchard paper, translated into orange-zone code that can be run in SCALE-MAMBA, our MPC infrastructure (in mpc_files/)
+- Orchard query translation source code (in cps_fuzz/)
+- Numbers for the k-means robustness experiment (in robustness/)
+- User and aggregation total cost numbers (in total_costs/)
+
+
+
+## Instructions
+
+All of our code is implemented within a docker to allow for easy set-up and cross-compatability performance.
 
 ## Docker Setup
 Create a Docker image. This will take a few minutes. You only have to do this
@@ -82,6 +90,4 @@ Program names to test:
 - cdf
 - range_query
 - kmedian_iter_medium
-
-Follow instructions for EC2 SCALE-MAMBA experiment to simulate with real network costs. For each comittee member, create a large EC2 instance and run ./ec2.sh on the number of desired machines.
 
