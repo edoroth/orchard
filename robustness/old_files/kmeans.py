@@ -1,19 +1,16 @@
 import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
-from haversine import haversine, Unit
 
 ITERS = 5
-NUM_CLUSTERS = 3
-X_RANGE = (67, 125)
-X_DIFF = X_RANGE[1]-X_RANGE[0]
-Y_RANGE = (25, 49)
-Y_DIFF = Y_RANGE[1]-Y_RANGE[0]
+NUM_CLUSTERS = 5
+RANGE = 180
+CLIP_RANGE = 1800
 global TARGET
 global BENIGN_USERS
 global ATTACKERS
-global avg # number of trials
-avg = 10
+global avg # trials
+avg = 1
 
 class User:
 	def __init__(self, id, x, y):
@@ -75,9 +72,9 @@ def compute_mal_point(cluster, target_x, target_y, LDP):
 	# Clip the result
 	if CLIP:
 		if LDP: #2x the range to allow for for noise
-			return (min(max(X_RANGE[0]-4*X_DIFF,new_x),X_RANGE[1]+4*X_DIFF), min(max(Y_RANGE[0]-4*X_DIFF,new_y),Y_RANGE[1]+4*Y_DIFF))	
+			return (min(max(-2*CLIP_RANGE,new_x),2*CLIP_RANGE), min(max(-2*CLIP_RANGE,new_y),2*CLIP_RANGE))	
 		else:
-                    return (min(max(X_RANGE[0],new_x),X_RANGE[1]), min(max(Y_RANGE[0],new_y),Y_RANGE[1]))	
+                    return (min(max(-1*RANGE,new_x),RANGE), min(max(-1*RANGE,new_y),RANGE))	
 	# Non-clipped version	
 	else:
 		return (new_x, new_y)
@@ -101,17 +98,13 @@ def compute_closest(clusters, x, y, reverse=False):
 	
 	return min_idx
 
-def run_protocol(users_list, maliciousTarget, LDP=False, defense=False, benign=False):
+def run_protocol(users_list, maliciousTarget, LDP=False, defense=False):
 	initial_clusters = []
-
-	# Seattle, New York, Houston, in order of (W, N) lat-lon
-	cities = [[122.3, 47.6], [74.0, 40.7], [95.4, 29.8]]
 	for i in range(NUM_CLUSTERS):
 		if RANDOM_INIT==False:
-			#initial_clusters.append([X_RANGE[0] + X_DIFF/NUM_CLUSTERS*i, Y_RANGE[0] + Y_DIFF/NUM_CLUSTERS])
-			initial_clusters.append(cities[i])
+			initial_clusters.append([2*RANGE/NUM_CLUSTERS*i-RANGE, 2*RANGE/NUM_CLUSTERS*i-RANGE])
 		else:
-			initial_clusters.append([np.random.uniform(low=X_RANGE[0], high=X_RANGE[1]), np.random.uniform(low=Y_RANGE[0], high=Y_RANGE[1])])
+			initial_clusters.append([np.random.randint(-1*RANGE, RANGE+1), np.random.randint(-1*RANGE, RANGE+1)])
 
 	#print initial_clusters
 
@@ -139,16 +132,10 @@ def run_protocol(users_list, maliciousTarget, LDP=False, defense=False, benign=F
 		#attackError = abs(updated_clusters[TARGET][0] - maliciousTarget[0])**2/float(RANGE**2) + \
 		#    abs(updated_clusters[TARGET][1] - maliciousTarget[1])**2/float(RANGE**2)
                 #l1 norm
-		#attackError = abs(updated_clusters[TARGET][0] - maliciousTarget[0])/float(RANGE) + \
-		    #abs(updateAd_clusters[TARGET][1] - maliciousTarget[1])/float(RANGE)
+		attackError = abs(updated_clusters[TARGET][0] - maliciousTarget[0])/float(RANGE) + \
+		    abs(updated_clusters[TARGET][1] - maliciousTarget[1])/float(RANGE)
 
-		#print 'target was %s, cluster was %s' % ( maliciousTarget, updated_clusters[TARGET])
-	attackError = haversine(updated_clusters[TARGET], maliciousTarget, unit=Unit.MILES) 
-
-	if (benign == True):
-		return updated_clusters
-	else:
-		return attackError	
+	return attackError/2
 
 
 
@@ -161,22 +148,21 @@ def main(exp, rand, eps):
 	ATTACKERS=0
 	global CLIP
 	CLIP = False
-	global RANDOM_INIT
-	RANDOM_INIT=rand
+        global RANDOM_INIT
+        RANDOM_INIT=rand
 	global EPSILON
 	EPSILON=eps
 	global LAP
 	LAP = 1/EPSILON if EPSILON != 0 else 0
-	global EXP
-	EXP=exp
+        global EXP
+        EXP=exp
 
 	 # FIXING THE DATA OF ALL USERS
         users_list = []
 	for i in range(BENIGN_USERS):
-		users_list.append(User('g', np.random.uniform(low=X_RANGE[0], high=X_RANGE[1]), np.random.uniform(low=Y_RANGE[0], high=Y_RANGE[1])))
+		users_list.append(User('g', np.random.randint(-1*RANGE, RANGE+1), np.random.randint(-1*RANGE, RANGE+1)))
 
-	#maliciousTarget = (np.random.uniform(low=X_RANGE[0], high=X_RANGE[1]), np.random.uniform(low=Y_RANGE[0], high=Y_RANGE[1]))
-	maliciousTarget = (80.0, 40.44) # Pittsburgh
+	maliciousTarget = (np.random.randint(-1*RANGE, RANGE+1), np.random.randint(-1*RANGE, RANGE+1))
 
 	ff = {} # GDP No Defense
 	ff_clip = {} # GDP No Defense and clipping
@@ -184,12 +170,9 @@ def main(exp, rand, eps):
 	tf = {} # LDP No defense
 	tf_clip = {} # LDP No defense and clipping
 
-	attackerOptions = [3**i for i in range(2*EXP+3)]
+	attackerOptions = [10**i for i in range(EXP+1)]
 	#attackerOptions = [1, 10, 100, 1000, 10**4]
 	#attackerOptions = [1, 10, 100, 1000, 10**4, 10**5]
-
-	# COMPLETE BENIGN RUN
-	#print 'benign clusters would have been: %s' % run_protocol(users_list, maliciousTarget, benign=True)
 
 	for i in range(len(attackerOptions)):
 			# Adding new attackers first
@@ -238,18 +221,19 @@ def main(exp, rand, eps):
 
 
         print exp, rand, eps
-        print 'ft:'
-        print ft
-        print 'ff_clip:'
-        print ff_clip
-        print 'tf_clip:'
-        print tf_clip
         print 'ff:'
         print ff
+        print 'ff_clip:'
+        print ff_clip
+        print 'ft:'
+        print ft
         print 'tf:'
         print tf
+        print 'tf_clip:'
+        print tf_clip
 
-	produce_graph(ff, ff_clip, ft, tf, tf_clip, NUM_CLUSTERS, EPSILON, EXP, RANDOM_INIT)
+	#print ff, ff_clip, ft, tf,tf_clip
+	#produce_graph(ff, ff_clip, ft, tf, tf_clip, NUM_CLUSTERS, EPSILON, EXP, RANDOM_INIT)
 
 def errors(x,y):
 	yerr = np.zeros([2, len(x)])
@@ -273,7 +257,6 @@ def produce_graph(ff, ff_clip, ft, tf, tf_clip, NUM_CLUSTERS, EPSILON, EXP, RAND
 	#for i in range(avg):
 	#	ax.plot(x,[z[i] for z in y],'go',lw=0, label = "GDP w/ defense" if i==0 else "")
 	ax.plot(x,np.median(y,1),'go',lw=2,ls='-', label="Orchard" )
-        print np.median(y,1)
 	yerr = errors(x,y)
 	ax.errorbar(x, np.median(y,1), yerr=yerr, marker='o', ls='-', lw=2, color='g', capsize=10)
 
@@ -281,42 +264,37 @@ def produce_graph(ff, ff_clip, ft, tf, tf_clip, NUM_CLUSTERS, EPSILON, EXP, RAND
 	x, y = zip(*ff_clip)
 	#for i in range(avg):
 	#	ax.plot(x,[z[i] for z in y],'mo',lw=0, label="GDP + IC" if i==0 else "")
-	ax.plot(x,np.median(y,1),'yo',lw=2,ls='-', label="GDP + IC" )
-        print np.median(y,1)
+	ax.plot(x,np.median(y,1),'mo',lw=2,ls='-', label="GDP + IC" )
 	yerr = errors(x,y) 
-	ax.errorbar(x, np.median(y,1), yerr=yerr, marker='o', ls='-', lw=2, color='y', capsize=10)
+	ax.errorbar(x, np.median(y,1), yerr=yerr, marker='o', ls='-', lw=2, color='m', capsize=10)
 
 	tf_clip = sorted(tf_clip.items())
 	x, y = zip(*tf_clip)
 	#for i in range(avg):
 	#	ax.plot(x,[z[i] for z in y],'yo',lw=0, label = "LDP + OC" if i==0 else "")
-	ax.plot(x,np.median(y,1),'mo',lw=2,ls='-', label="LDP + OC" )
-        print np.median(y,1)
+	ax.plot(x,np.median(y,1),'yo',lw=2,ls='-', label="LDP + OC" )
 	yerr = errors(x,y)
-	ax.errorbar(x, np.median(y,1), yerr=yerr, marker='o', ls='-', lw=2, color='m', capsize=10)
+	ax.errorbar(x, np.median(y,1), yerr=yerr, marker='o', ls='-', lw=2, color='y', capsize=10)
+
+	ff = sorted(ff.items())
+	x, y = zip(*ff)
+	#for i in range(avg):
+	#	ax.plot(x,[z[i] for z in y],'bo',lw=0, label="GDP no defense" if i==0 else "")
+	ax.plot(x,np.median(y,1),'bo',lw=2,ls='-', label="GDP no defense" )
+	yerr = errors(x,y) 
+	ax.errorbar(x, np.median(y,1), yerr=yerr, marker='o', ls='-', lw=2, color='b', capsize=10)
 
 	tf = sorted(tf.items())
 	x, y = zip(*tf)
 	#for i in range(avg):
 	#	ax.plot(x,[z[i] for z in y],'ro',lw=0,label = "LDP no defense" if i==0 else "")
-	ax.plot(x,np.median(y,1),'ko',lw=2,ls='-', label="LDP no defense" )
-        print np.median(y,1)
+	ax.plot(x,np.median(y,1),'ro',lw=2,ls='-', label="LDP no defense" )
 	yerr = errors(x,y) 
-	ax.errorbar(x, np.median(y,1), yerr=yerr, marker='o', ls='-', lw=2, color='black', capsize=10)
-
-        ff = sorted(ff.items())
-	x, y = zip(*ff)
-	#for i in range(avg):
-	#	ax.plot(x,[z[i] for z in y],'bo',lw=0, label="GDP no defense" if i==0 else "")
-	ax.plot(x,np.median(y,1),'bo',lw=2,ls='-', label="GDP no defense" )
-        print np.median(y,1)
-	yerr = errors(x,y) 
-	ax.errorbar(x, np.median(y,1), yerr=yerr, marker='o', ls='-', lw=2, color='b', capsize=10)
-
+	ax.errorbar(x, np.median(y,1), yerr=yerr, marker='o', ls='-', lw=2, color='r', capsize=10)
 
 	
 	ax.legend()
-	ax.set(xlabel='Number of attackers', ylabel='Attack Error (miles)')
+	ax.set(xlabel='Number of attackers', ylabel='Attack Error')
 		   #title="Defense Effectiveness")
 		   #title="Defense Effectiveness, eps=inf")
 	#ax.grid()
@@ -330,9 +308,8 @@ def produce_graph(ff, ff_clip, ft, tf, tf_clip, NUM_CLUSTERS, EPSILON, EXP, RAND
  	plt.legend(loc='upper right',
            frameon=False, ncol=1, fontsize=10)
 	fig.subplots_adjust(bottom=0.2, left=0.3)
-	#fig.savefig("defenseFigures/def_k=%d_eps=%0.2f_10^%d%r_extra.png" % (NUM_CLUSTERS, EPSILON, EXP, RANDOM_INIT))
-	fig.savefig("defenseFigures/geo_k=%d_eps=%0.2f_10^%d%r_3.png" % (NUM_CLUSTERS, EPSILON, EXP, RANDOM_INIT))
+	fig.savefig("defenseFigures/def_k=%d_eps=%0.2f_10^%d%r_extra.png" % (NUM_CLUSTERS, EPSILON, EXP, RANDOM_INIT))
         #fig.savefig("defenseFigures/temp")
 	#plt.show()
 
-main(4, False, 0.1)
+#main(4, False, 0.1)

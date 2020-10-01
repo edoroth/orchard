@@ -1,0 +1,12 @@
+# Column 2: bandwidth (decrypt)
+# Column 3: bandwidth (keygen)
+# Column 4: comp (decrypt)
+# column 5: comp (keygen)
+# bw (s) - agg
+# bw (r) - agg
+# comp - agg
+# bw - participant
+# comp -participant
+
+0 1345.02 1900 104 176 1449134205014600 85000000000000 44.6 230 65552 1205388 54.06 7.83 0.320 61.91
+

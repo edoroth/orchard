@@ -1,0 +1,10 @@
+# Column 1: Algorithm
+# Column 2: Computation (cores) for aggregator (1 round)
+# Column 3: 3 rounds
+# Column 4: 20 rounds
+# --- First pass at data ---
+
+1 0.446 1.35 8.92
+2 4.46 13.5 89.2
+3 44.6 135 892 #1.3 bil
+4 446 1350 8920

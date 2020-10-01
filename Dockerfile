@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y \
   g++ \
   gcc \
   git \
+  gnuplot \
   libgmp3-dev \
   m4 \
   make \

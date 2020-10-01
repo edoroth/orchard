@@ -1,0 +1,19 @@
+# Column 1: Bar group (1..3)
+# Column 2: SNARK size (bytes)
+# Column 3: Ciphertext size (bytes)
+# Column 4: Total costs including sum verification size (bytes)
+1 230 65552 1205388 # LogReg
+2 230 65552 1205388 # CMS
+3 2300 655520 12053880 # Perc
+4 230 65552 1205388 #ID3
+5 1150 327760 6026940 # k-means x5
+6 230 65552 1205388 # PCA
+7 4600 1311040 24107760 # NN x20
+8 1150 327760 6026940 # kmedian x5
+9 230 65552 1205388 #bloom
+10 460 131104 2410776 # NB x2 for space
+11 230 65552 1205388 #CMS
+12 230 65552 1205388 #Hist
+13 230 65552 1205388 #CDF
+14 230 65552 1205388 #Range
+
