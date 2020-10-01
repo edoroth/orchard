@@ -1,9 +1,6 @@
-Implementation of Orchard
--------------------------
-
 ## Orchard
 
-This is a partial implementation of the Orchard secure data analytics system. It does *not* include code to run a massively distributed data collection scheme on billions of devices. However, it does include the Orchard query engine which translates centralized queries into distributed ones. The resulting code is split into three parts: red, orange, and green zone code.
+This is a partial implementation of the Orchard private data analytics system. It does *not* include code to run a massively distributed data collection scheme on billions of devices. However, it does include the Orchard query engine which translates centralized queries into distributed ones. The resulting code is split into three parts: red, orange, and green zone code.
 - The orange zone code can be executed inside of an MPC framework. We provide a prototype of this infrastructure, with the ability to simulate many committee devices on one machine. For ease of use and to prevent inordinate costs, we do not provide the EC2 infrastructure to run these queries in a fully distributed setting.
 - The red zone code will be executed on user devices. We do not provide the infrastructure to run this code in a distributed way, but we provide benchmark numbers on the total costs associated with all user operations in Orchard.
 - The green zone code will be executed on a centralized aggregator with access to massive resources, such as a data center. We provide benchmark numbers on the total costs associated with all agregator operations as well.
@@ -50,7 +47,11 @@ For a walkthrough of how to write a *new* query, follow instructions in /root/cp
 (assuming you are running inside of the docker created above.)
 
 ### Table 2
-Examine the generated code in /root/cps-fuzz/extracted. The number of BMCS calls in each file should be the corresponding 'Optimized' column for each query's row (since we only include one iteration in each query file, 'm' indicates that there will be one bmcs call in the extracted code, and 'm+1' indicates that there will be two bmcs calls, with only one of them required to be run in subsequent iterations). The 'Naive' column is manually generated, considering the total number of uploads towards a sum that each user must make for any given query.
+Examine the generated code in /root/cps-fuzz/extracted. The number of BMCS calls in each file should be the corresponding 'Optimized' column for each query's row. 
+
+Since we only include one iteration in each query file, 'm' indicates that there will be one bmcs call in the extracted code, and 'm+1' indicates that there will be two bmcs calls, with only one of them required to be run in subsequent iterations.
+
+ The 'Naive' column is manually generated, considering the total number of uploads towards a sum that each user must make for any given query.
 
 ### Figure 4
 To generate data and produce the graph (will take around 6 minutes):
@@ -93,5 +94,6 @@ Program names to test:
 ### Figures 5, 7, 8
 
 Install gnuplot 5.2 patchlevel 6 (should be in the docker, but this version can be installed manually, if there are any issues).
+
 Run ```./plot_all.sh``` - this will populate all PDF files inside of the figures/ folder, which should be identical to those produced in the paper.
 
