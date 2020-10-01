@@ -56,10 +56,11 @@ Examine the generated code in /root/cps-fuzz/extracted. The number of BMCS calls
 To generate data and produce the graph (will take around 6 minutes):
 ```
 $ cd /root/robustness/
+$ mkdir defenseFigures
 $ python geogr.py >> geogrOut
 ``` 
 
-This will populate a new image file in the defenseFigures/ folder. Note that to make this go faster, we run for less total trials (median across 10 trials, not 500!), so the data may be slightly different than reported in the paper. However, the numbers should be similar on expectation.
+This will populate a new .png image file in the defenseFigures/ folder. Note that to make this go faster, we run for less total trials (median across 10 trials, not 500!), so the data may be slightly different than reported in the paper. However, the numbers should be similar on expectation. You can play around with the parameters in geogr.py to use a different epsilon (set as 0.1) or different number of users (set as 4, meaning 10^4 total users) in the last line of this file.
 
 'geogrOut' now also contains the raw data for Figure 4 (in the paper, we use this raw data and graph using gnuplot). 
 
@@ -75,7 +76,7 @@ Script must be run with at least 5 committee members (will take a few minutes to
 Program names to test:
 - bag_filter_sum_noise
 - kmeans_iter
-- logistic_iter
+ logistic_iter
 - naive_bayes
 - pca
 - perceptron_iter
