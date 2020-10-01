@@ -4,7 +4,6 @@ N_2=$2  # where N_2 <= N1
 # Require THRESHOLD * 2 + 1 <= N2
 THRESHOLD=$3
 
-#( make clean ; make progs ) > /dev/null
 
 rm ./Data/*
 

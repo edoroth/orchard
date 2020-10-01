@@ -1,5 +1,3 @@
-#echo 'REMINDER: did you edit the source code for new # of parties?'
-
 N_1=$1
 N_2=$1  # where N_2 <= N1 #eliminating for now, subset is a bit messed up
 
@@ -12,10 +10,6 @@ sed -i "1s/.*/k = $(($N_1-1)) \#Committee members (total participants is k+1)/" 
 
 # Require THRESHOLD * 2 + 1 <= N2
 THRESHOLD=2
-
-#SIZE=$3
-#sed -i "11s/.*/d = $SIZE \#Array size/" Programs/keygen/keygen.mpc
-#sed -i "11s/.*/d = $SIZE \#Array size/" Programs/$PROGRAM/$PROGRAM.mpc
 
 
 echo 'Running key-gen protocol...'

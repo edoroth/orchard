@@ -40,6 +40,7 @@ ADD mpc_files/Programs/ /root/SCALE-MAMBA/Programs
 ADD README.md .
 
 ADD robustness/ /root/robustness
+ADD total_costs /root/total_costs
 
 RUN git clone https://github.com/hengchu/cps-fuzz.git && \
     cd cps-fuzz && \
