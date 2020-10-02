@@ -19,8 +19,8 @@ In summary, this repository contains:
 All of our code is implemented within a docker to allow for easy set-up and cross-compatability performance.
 
 ## Docker Setup
-Create a Docker image. This will take a few minutes. You only have to do this
-once (note: it may be necessary to allocate at least 8GB memory to Docker).
+Create a Docker image. This will take a few minutes (maybe up to half an hour). 
+You only have to do this once (note: it may be necessary to allocate at least 8GB memory to Docker).
 ```
 $ docker build -t orchard .
 ```
@@ -77,7 +77,7 @@ Script must be run with at least 5 committee members (will take a few minutes to
 Program names to test:
 - bag_filter_sum_noise
 - kmeans_iter
- logistic_iter
+- logistic_iter
 - naive_bayes
 - pca
 - perceptron_iter
@@ -95,5 +95,5 @@ Program names to test:
 
 Install gnuplot 5.2 patchlevel 6 (should be in the docker, but this version can be installed manually, if there are any issues).
 
-Run ```./plot_all.sh``` - this will populate all PDF files inside of the figures/ folder, which should be identical to those produced in the paper.
+Go into '/root/total_costs' and run ```./plot_all.sh``` - this will populate all PDF files inside of the figures/ folder, which should be identical to those produced in the paper.
 
