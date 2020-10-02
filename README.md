@@ -30,6 +30,8 @@ $ docker run -it --rm orchard
 ```
 Please note that any changes you make in the container are not persistent.
 
+NOTE: if (for any reason), you are having any trouble with pip during the docker build, it may be because python2.7 is deprecated. If this occurs, please comment out the 4 'pip install' lines in the Dockerfile, and run the robustness/ experiment locally. These python libraries are only used for this portion of the experiments.
+
 ## Experiments
 
 To re-run the code extraction process inside of the docker container, clear the /root/cps-fuzz/extracted directory, then:
