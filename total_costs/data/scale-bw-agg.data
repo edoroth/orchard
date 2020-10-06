@@ -1,6 +1,11 @@
 # Column 1: Algorithm
-# Column 2: Computation (cores) for aggregator
-# --- First pass at data ---
+# Column 2: Bytes sent for aggregator (1 round)
+# Column 3: Bytes received for aggregator (1 round)
+# Column 4: Bytes sent for aggregator (3 rounds)
+# Column 5: Bytes received for aggregator (3 rounds)
+# Column 6: Bytes sent for aggregator (20 rounds)
+# Column 7: Bytes received for aggregator (20 rounds)
+
 1 14491342050146 850000000000 43500000000000 2550000000000 290000000000000 17000000000000
 2 144913420501460 8500000000000 435000000000000 25500000000000 2900000000000000 170000000000000
 3 1449134205014600 85000000000000 4350000000000000 255000000000000 29000000000000000 1700000000000000 #1.3bil

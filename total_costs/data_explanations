@@ -1,0 +1,61 @@
+## Explanation of User and Aggregator Costs
+
+#Parameters used (choices explained in paper):
+N (num users)		1.3*10**9
+Lambda (Security parameter)		80		
+n (The ring polynomial size)		2048		
+p (Prime used in SCALE-MAMBA)		198766463529478683931867765928436695041		
+length of p	bits	128		
+Ring element size	bits	262144		
+s (Number of random samples)		5
+number of ciphertexts for sum verification	17	
+Hash time	sec	0.0000494		
+Hash size	bits	256		
+				
+Public Key size (RSA)	bits	4096		
+Ciphertext size	bits	524288	bytes 65536	
+Commitment size	bits	256	https://crypto.stackexchange.com/questions/59520/what-is-the-concrete-communication-complexity-of-commitment-schemes/59523#59523	
+				
+Decommitment size	bits	526464	https://crypto.stackexchange.com/questions/59520/what-is-the-concrete-communication-complexity-of-commitment-schemes/59523#59523	
+
+Size of ring mult circuit	gates	123904		
+Number of ring mults in Enc		2		
+Size of Enc circuit (approx)	gates	247808		
+Speed of SNARK generation	gates/sec	0.0002	https://eprint.iacr.org/2013/879.pdf	
+SNARKS computation time	sec	54.0672
+SNARK verification time	 sec 0.005	https://eprint.iacr.org/2013/879.pdf
+SNARK size	bytes	230	https://eprint.iacr.org/2013/879.pdf	
+				
+Encryption time	sec	7.829908848		
+Commitment time	sec	0.0000494		
+Homomorphic addition time (ciphertexts)	sec	0.0017
+Committee certificate size	bits	734	http://fm4dd.com/openssl/certexamples.htm
+
+MHT Inclusion Proof Size	bits (N log N)	
+MHT Generation Computation	N * Hash time	
+Desired round length sec 1440
+
+#User Cost Formulas:	
+Bandwidth (bytes): (3s+1)*(log N)* hash size + commitment size + SNARK size + ciphertext size * (num ciphertexts for sum verification + 1)
+
+Computation (seconds) : (3s+1) (log N)* hash time + commitment time + encryption time + SNARK computation time + s * addition time
+
+These formulas will give you the total costs (those listed in the last column of each data file.) Each row is multiplied by the total number of iterations required for the run of that algorithm. (Numbers  you procure from these formulas may be smaller by a few percentages than those reported, we added some additional local benchmarks from red-zone computations)
+
+Resulting data is in data/bw-participant.data and data/comp-participant.data (bandwidth and computation costs, respectively).
+
+
+#Aggregator Cost Formulas:
+Bandwidth received (bytes): N * (Committee certificate size + public key size + ciphertext size) + Inclusion proof size
+
+Bandwidth sent (bytes): (num ciphertexts for sum verification) * (N * (Committee certificate size + public key size + ciphertext size) + Inclusion proof size)
+
+Computation (number of cores): (N * hash time + (log N) * addition time + SNARK verification time) / (Round length)
+
+All numbers are simply multiplied linearly by the total number of rounds. (Some numbers may be rounded for graphing purposes, so your calculations may differ slightly).
+
+Resulting data is in data/bw-agg.data and data/comp-agg.data (bandwidth and computation costs, respectively).
+
+The remaining two datasets, data/scale-bw-agg.data and data/scale-comp-agg.data simply use the exact same formulas as the ones above, but substitute different values of N (the bandwidth plot only shows bytes sent, but the data file contains all values).
+
+

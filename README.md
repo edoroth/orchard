@@ -99,3 +99,4 @@ Install gnuplot 5.2 patchlevel 6 (should be in the docker, but this version can 
 
 Go into '/root/total_costs' and run ```./plot_all.sh``` - this will populate all PDF files inside of the figures/ folder, which should be identical to those produced in the paper.
 
+The explanations for these figures are listed in the 'data_explanations' file in this folder, giving parameters/measurements and the formulas used to calculate total costs.
