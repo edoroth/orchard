@@ -1,6 +1,6 @@
 ## Explanation of User and Aggregator Costs
 
-#Parameters used (choices explained in paper):
+# Parameters used (choices explained in paper):
 N (num users)		1.3*10**9
 Lambda (Security parameter)		80		
 n (The ring polynomial size)		2048		
@@ -35,7 +35,7 @@ MHT Inclusion Proof Size	bits (N log N)
 MHT Generation Computation	N * Hash time	
 Desired round length sec 1440
 
-#User Cost Formulas:	
+# User Cost Formulas:	
 Bandwidth (bytes): (3s+1)*(log N)* hash size + commitment size + SNARK size + ciphertext size * (num ciphertexts for sum verification + 1)
 
 Computation (seconds) : (3s+1) (log N)* hash time + commitment time + encryption time + SNARK computation time + s * addition time
@@ -45,7 +45,7 @@ These formulas will give you the total costs (those listed in the last column of
 Resulting data is in data/bw-participant.data and data/comp-participant.data (bandwidth and computation costs, respectively).
 
 
-#Aggregator Cost Formulas:
+# Aggregator Cost Formulas:
 Bandwidth received (bytes): N * (Committee certificate size + public key size + ciphertext size) + Inclusion proof size
 
 Bandwidth sent (bytes): (num ciphertexts for sum verification) * (N * (Committee certificate size + public key size + ciphertext size) + Inclusion proof size)
